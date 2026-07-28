@@ -1,7 +1,6 @@
 async function loadApiCards(){
 
 
-
 const loader =
 document.getElementById(
 "loader"
@@ -47,6 +46,10 @@ savedCards;
 createCards(
 window.cards
 );
+
+
+
+updateProgress();
 
 
 
@@ -134,6 +137,10 @@ text.innerHTML=
 createCards(
 window.cards
 );
+
+
+
+updateProgress();
 
 
 
