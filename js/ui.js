@@ -121,13 +121,13 @@ function toggleCard(id){
     saveCollection(
         collection
     );
-updateProgress();
 
 
 
     createCards(
         window.cards
     );
+
 
 
 
