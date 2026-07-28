@@ -1,74 +1,75 @@
 function openModal(id){
 
 
-console.log("Abriendo carta:", id);
+    const card = cards.find(
+        card => card.id === id
+    );
+
+
+    console.log("Carta seleccionada:", card);
 
 
 
-const card = cards.find(
-(c)=>c.id === id
-);
+    if(!card){
+
+        console.error("No existe la carta");
+
+        return;
+
+    }
 
 
 
-if(!card){
+    document.getElementById("modal")
+    .style.display = "flex";
 
-console.error("Carta no encontrada");
 
-return;
+
+    document.getElementById("modalImage")
+    .src = card.image;
+
+
+
+    document.getElementById("modalName")
+    .textContent = card.pokemon;
+
+
+
+    document.getElementById("modalSet")
+    .textContent = card.set;
+
+
+
+    document.getElementById("modalNumber")
+    .textContent = "#" + card.number;
+
+
 
 }
 
-
-
-document.getElementById("modal")
-.style.display="flex";
-
-
-
-document.getElementById("modalImage")
-.src = card.image;
-
-
-
-document.getElementById("modalName")
-.textContent = "Spiritomb";
-
-
-
-document.getElementById("modalSet")
-.textContent = card.set;
-
-
-
-document.getElementById("modalNumber")
-.textContent = "#" + card.number;
-
-
-
-}
 
 
 
 function closeModal(){
 
 
-document.getElementById("modal")
-.style.display="none";
+    document.getElementById("modal")
+    .style.display = "none";
 
 
 }
 
 
 
-window.addEventListener(
-"DOMContentLoaded",
-()=>{
+window.addEventListener("DOMContentLoaded",()=>{
 
 
-document
-.getElementById("closeModal")
-.onclick = closeModal;
+    document
+    .getElementById("closeModal")
+    .addEventListener(
+        "click",
+        closeModal
+    );
 
 
 });
