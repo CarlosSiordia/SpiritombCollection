@@ -1,15 +1,7 @@
-alert("app funcionando");
-window.onload = function(){
+window.onload=function(){
 
 
-console.log("Spiritomb App iniciada");
-
-
-loadApiCards();;
-
-
-updateProgress();
-
+    loadApiCards();
 
 
 };
