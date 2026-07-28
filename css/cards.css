@@ -1,37 +1,38 @@
 #cardContainer{
 
+    width:min(900px,100%);
+
+    margin:0 auto;
+
+    padding:16px;
+
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,minmax(0,1fr));
 
     gap:14px;
 
-    padding:18px;
-
-    max-width:700px;
-
-    margin:auto;
+    align-items:start;
 
 }
-
 
 .card{
-    position: relative;
 
-    background: rgba(21,21,32,.85);
-    backdrop-filter: blur(12px);
+    width:100%;
 
-    border: 1px solid rgba(255,255,255,.06);
+    background:rgba(21,21,32,.82);
 
-    border-radius: 18px;
+    border:1px solid rgba(255,255,255,.06);
 
-    overflow: hidden;
+    border-radius:18px;
 
-    transition: .25s ease;
+    overflow:hidden;
 
-    cursor: pointer;
+    transition:.25s;
+
+    cursor:pointer;
+
 }
-
 
 
 .card.owned{
@@ -44,9 +45,9 @@ border-color:#8b5cf6;
 
 .cardImage{
 
-    aspect-ratio:63/88;
+    width:100%;
 
-    overflow:hidden;
+    aspect-ratio:63/88;
 
 }
 
@@ -59,8 +60,6 @@ border-color:#8b5cf6;
     object-fit:cover;
 
     display:block;
-
-    transition:.35s;
 
 }
 
@@ -75,9 +74,7 @@ border-color:#8b5cf6;
 
     font-size:.9rem;
 
-    font-family:"Outfit",sans-serif;
-
-    font-weight:700;
+    margin-bottom:2px;
 
 }
 
@@ -85,9 +82,7 @@ border-color:#8b5cf6;
 
     font-size:.72rem;
 
-    color:var(--subtext);
-
-    margin-top:2px;
+    margin-bottom:6px;
 
 }
 
