@@ -1,38 +1,28 @@
-function openModal(card){
+function openModal(id){
+
+    const card = cards.find(
+        item => item.id === id
+    );
 
 
-document.getElementById(
-"modal"
-).style.display="flex";
+    document.getElementById("modal")
+    .style.display="flex";
 
 
-
-document.getElementById(
-"modalImage"
-).src = card.image;
+    document.getElementById("modalImage")
+    .src = card.image;
 
 
-
-document.getElementById(
-"modalName"
-).innerHTML =
-card.pokemon;
+    document.getElementById("modalName")
+    .innerHTML = card.pokemon;
 
 
-
-document.getElementById(
-"modalSet"
-).innerHTML =
-card.set;
+    document.getElementById("modalSet")
+    .innerHTML = card.set;
 
 
-
-document.getElementById(
-"modalNumber"
-).innerHTML =
-"#"+card.number;
-
-
+    document.getElementById("modalNumber")
+    .innerHTML = "#" + card.number;
 
 }
 
@@ -40,11 +30,8 @@ document.getElementById(
 
 function closeModal(){
 
-
-document.getElementById(
-"modal"
-).style.display="none";
-
+    document.getElementById("modal")
+    .style.display="none";
 
 }
 
@@ -52,5 +39,4 @@ document.getElementById(
 
 document
 .getElementById("closeModal")
-.onclick =
-closeModal;
+.onclick = closeModal;
