@@ -6,8 +6,13 @@ async function loadApiCards(){
 
 
     const results =
-    await searchCard(
-        "Spiritomb"
+    await searchSpiritomb();
+
+
+
+    console.log(
+        "Resultados Spiritomb:",
+        results
     );
 
 
@@ -17,40 +22,47 @@ async function loadApiCards(){
         (card,index)=>{
 
 
-        return {
+            return {
 
 
-            id:index+1,
+                id:index+1,
 
 
-            pokemon:
-            card.name,
+                pokemon:
+                card.name,
 
 
-            set:
-            card.set.name,
+                set:
+                card.set.name,
 
 
-            number:
-            card.number,
+                number:
+                card.number,
 
 
-            rarity:
-            card.rarity || "Unknown",
+                rarity:
+                card.rarity || "Normal",
 
 
-            year:
-            card.set.releaseDate,
+                year:
+                card.set.releaseDate,
 
 
-            image:
-            card.images.large
+                image:
+                card.images.large
 
 
-        };
+            };
 
 
-    });
+        });
+
+
+
+    console.log(
+        "Cartas procesadas:",
+        loadedCards
+    );
 
 
 
