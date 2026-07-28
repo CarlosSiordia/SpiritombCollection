@@ -118,7 +118,7 @@ saveCollection(collection);
 
 
 
-createCards(cards);
+createCards(window.cards);
 
 
 
