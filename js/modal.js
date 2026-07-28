@@ -21,29 +21,28 @@ return;
 
 
 
-const modal =
-document.getElementById("modal");
+document.getElementById("modal")
+.style.display="flex";
 
 
 
-modal.style.display="flex";
+document.getElementById("modalImage")
+.src = card.image;
 
 
 
-document.getElementById("modalImage").src =
-card.image;
+document.getElementById("modalName")
+.textContent = "Spiritomb";
 
 
-document.getElementById("modalName").textContent =
-card.pokemon;
+
+document.getElementById("modalSet")
+.textContent = card.set;
 
 
-document.getElementById("modalSet").textContent =
-card.set;
 
-
-document.getElementById("modalNumber").textContent =
-"#"+card.number;
+document.getElementById("modalNumber")
+.textContent = "#" + card.number;
 
 
 
@@ -69,10 +68,7 @@ window.addEventListener(
 
 document
 .getElementById("closeModal")
-.addEventListener(
-"click",
-closeModal
-);
+.onclick = closeModal;
 
 
 });
