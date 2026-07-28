@@ -1,30 +1,32 @@
 function getCollection(){
 
 
-const saved = localStorage.getItem(
-"spiritombCollection"
-);
+    const saved =
+    localStorage.getItem(
+        "spiritombCollection"
+    );
 
 
-
-return saved ? JSON.parse(saved) : [];
+    return saved ?
+    JSON.parse(saved)
+    :
+    [];
 
 
 }
 
 
 
+function saveCollection(collection){
 
-function saveCollection(data){
 
+    localStorage.setItem(
 
-localStorage.setItem(
+        "spiritombCollection",
 
-"spiritombCollection",
+        JSON.stringify(collection)
 
-JSON.stringify(data)
-
-);
+    );
 
 
 }
