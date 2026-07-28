@@ -1,43 +1,84 @@
 async function loadApiCards(){
 
 
-    const apiCards = await getSpiritombCards();
+    let savedCards =
+    getApiCards();
 
 
 
-    console.log(apiCards);
+    if(savedCards){
+
+
+        console.log(
+        "Cargando cartas guardadas"
+        );
+
+
+        window.cards =
+        savedCards;
+
+
+        createCards(cards);
+
+
+        return;
+
+    }
 
 
 
-    const cardsFromAPI = apiCards.map(
-        (card,index)=>{
-
-
-            return {
-
-                id:index+1,
-
-                pokemon:card.name,
-
-                set:card.set.name,
-
-                number:card.number,
-
-                year:card.set.releaseDate,
-
-                rarity:card.rarity || "Unknown",
-
-                image:card.images.large
-
-            };
-
-
-        }
+    console.log(
+    "Consultando API..."
     );
 
 
 
-    createCards(cardsFromAPI);
+    const apiCards =
+    await getSpiritombCards();
+
+
+
+    const cardsFromAPI =
+    apiCards.map(
+    (card,index)=>{
+
+
+        return {
+
+            id:index+1,
+
+            pokemon:card.name,
+
+            set:card.set.name,
+
+            number:card.number,
+
+            year:card.set.releaseDate,
+
+            rarity:
+            card.rarity || "Unknown",
+
+            image:
+            card.images.large
+
+        };
+
+
+    });
+
+
+
+    saveApiCards(
+    cardsFromAPI
+    );
+
+
+    window.cards =
+    cardsFromAPI;
+
+
+    createCards(cards);
+
 
 
 }
