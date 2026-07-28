@@ -8,285 +8,79 @@ box-sizing:border-box;
 
 }
 
+html{
+
+scroll-behavior:smooth;
+
+}
 
 body{
 
-background:#0f1017;
+background:var(--bg);
 
-color:white;
+color:var(--text);
 
-font-family:Arial, sans-serif;
+font-family:"Poppins",sans-serif;
 
-}
+overflow-x:hidden;
 
-
-
-#app{
-
-max-width:500px;
-
-margin:auto;
-
-padding:20px;
-
-}
-
-
-
-header{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-margin-bottom:30px;
-
-}
-
-
-
-.logo{
-
-width:70px;
-
-height:70px;
-
-border-radius:20px;
-
-overflow:hidden;
-
-background:#24163d;
-
-}
-
-
-
-.logo img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
-
-
-
-h1{
-
-font-size:26px;
-
-}
-
-
-
-header p{
-
-color:#aaa;
-
-}
-
-
-
-.progressSection{
-
-background:#191c29;
-
-padding:20px;
-
-border-radius:20px;
-
-margin-bottom:25px;
-
-}
-
-
-
-.progressInfo{
-
-display:flex;
-
-justify-content:space-between;
-
-margin-bottom:10px;
-
-}
-
-
-
-.progressBar{
-
-height:12px;
-
-background:#333;
-
-border-radius:20px;
-
-overflow:hidden;
-
-}
-
-
-
-#progressFill{
-
-height:100%;
-
-width:0%;
-
-background:#8b5cf6;
-
-transition:.3s;
-
-}
-.modal{
-
-display:none;
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.8);
-
-backdrop-filter:blur(10px);
-
-justify-content:center;
-
-align-items:center;
-
-z-index:999;
-
-
-}
-
-
-
-.modalContent{
-
-background:#191c29;
-
-padding:25px;
-
-border-radius:25px;
-
-width:90%;
-
-max-width:400px;
-
-text-align:center;
+min-height:100vh;
 
 position:relative;
 
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:-20%;
+
+background:
+
+radial-gradient(circle at 20% 20%,
+rgba(139,92,246,.18),
+transparent 30%),
+
+radial-gradient(circle at 80% 35%,
+rgba(168,85,247,.12),
+transparent 35%),
+
+radial-gradient(circle at 50% 100%,
+rgba(45,212,191,.08),
+transparent 45%);
+
+filter:blur(70px);
+
+animation:bgMove 20s ease-in-out infinite alternate;
+
+z-index:-2;
 
 }
 
 
+body::after{
 
-.modalContent img{
-
-width:80%;
-
-border-radius:15px;
-
-}
-
-
-
-#closeModal{
-
-position:absolute;
-
-right:15px;
-
-top:15px;
-
-background:none;
-
-border:none;
-
-color:white;
-
-font-size:25px;
-
-}
-#loader{
+content:"";
 
 position:fixed;
 
 inset:0;
 
-background:#0f1017;
+background-image:
 
-display:flex;
+radial-gradient(
+rgba(255,255,255,.08) 1px,
+transparent 1px);
 
-justify-content:center;
+background-size:42px 42px;
 
-align-items:center;
+opacity:.15;
 
-z-index:9999;
+z-index:-1;
 
-}
-
-
-
-.loaderBox{
-
-width:80%;
-
-max-width:350px;
-
-text-align:center;
-
-}
-
-
-
-.loaderBox img{
-
-width:90px;
-
-border-radius:20px;
-
-margin-bottom:20px;
-
-}
-
-
-
-.loadingBar{
-
-height:12px;
-
-background:#333;
-
-border-radius:20px;
-
-overflow:hidden;
-
-margin-top:20px;
-
-}
-
-
-
-#loadingProgress{
-
-height:100%;
-
-width:20%;
-
-background:#8b5cf6;
-
-transition:.5s;
+pointer-events:none;
 
 }
