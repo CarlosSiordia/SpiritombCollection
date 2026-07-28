@@ -1,25 +1,60 @@
 function saveApiCards(cards){
 
-    localStorage.setItem(
-        "spiritombCards",
-        JSON.stringify(cards)
-    );
+
+localStorage.setItem(
+"spiritombCards",
+JSON.stringify(cards)
+);
+
 
 }
 
 
 
+
 function getApiCards(){
 
-    const data =
-    localStorage.getItem(
-        "spiritombCards"
-    );
+
+try{
 
 
-    return data ?
-    JSON.parse(data)
-    :
-    null;
+const data =
+localStorage.getItem(
+"spiritombCards"
+);
+
+
+
+if(!data){
+
+return null;
+
+}
+
+
+
+return JSON.parse(data);
+
+
+
+}catch(error){
+
+
+console.error(
+"Error leyendo caché",
+error
+);
+
+
+localStorage.removeItem(
+"spiritombCards"
+);
+
+
+return null;
+
+
+}
+
 
 }
