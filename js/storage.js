@@ -1,20 +1,26 @@
 function getCollection(){
 
-return JSON.parse(
-localStorage.getItem(
+let data = localStorage.getItem(
 "spiritombCollection"
-)
-)||[];
+);
+
+
+return data ? JSON.parse(data) : [];
 
 }
 
 
 
-function saveCollection(data){
+function saveCollection(collection){
+
 
 localStorage.setItem(
+
 "spiritombCollection",
-JSON.stringify(data)
+
+JSON.stringify(collection)
+
 );
+
 
 }
