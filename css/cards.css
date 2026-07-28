@@ -9,15 +9,20 @@ gap:20px;
 
 
 .card{
+    position: relative;
 
-background:#191c29;
+    background: rgba(21,21,32,.85);
+    backdrop-filter: blur(12px);
 
-border-radius:25px;
+    border: 1px solid rgba(255,255,255,.06);
 
-overflow:hidden;
+    border-radius: 18px;
 
-border:2px solid transparent;
+    overflow: hidden;
 
+    transition: .25s ease;
+
+    cursor: pointer;
 }
 
 
