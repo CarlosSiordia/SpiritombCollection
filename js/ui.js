@@ -42,11 +42,15 @@ function createCards(cards){
 
         </div>
 
-        <button class="cardButton">
+        <button 
+class="cardButton"
+onclick="toggleCard(${card.id})">
 
-            ✔ Marcar como obtenida
+${isOwned(card.id)
+?"✅ En colección"
+:"➕ Añadir"}
 
-        </button>
+</button>
 
     </div>
 
