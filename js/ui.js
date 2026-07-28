@@ -1,3 +1,38 @@
+let collection=getCollection();
+
+
+
+function toggleCard(id){
+
+
+if(collection.includes(id)){
+
+
+collection =
+collection.filter(
+card=>card!==id
+);
+
+
+}else{
+
+
+collection.push(id);
+
+
+}
+
+
+saveCollection(collection);
+
+
+createCards(cards);
+
+
+updateProgress();
+
+
+}
 function createCards(cards){
 
     const container=document.getElementById("cardContainer");
