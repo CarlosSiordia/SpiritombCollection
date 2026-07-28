@@ -1,3 +1,4 @@
+alert("apiLoader funcionando");
 async function loadApiCards(){
 
 
