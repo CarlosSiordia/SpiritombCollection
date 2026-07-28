@@ -1,28 +1,51 @@
 function openModal(id){
 
-    const card = cards.find(
-        item => item.id === id
-    );
+
+console.log("Abriendo carta:", id);
 
 
-    document.getElementById("modal")
-    .style.display="flex";
+
+const card = cards.find(
+(c)=>c.id === id
+);
 
 
-    document.getElementById("modalImage")
-    .src = card.image;
+
+if(!card){
+
+console.error("Carta no encontrada");
+
+return;
+
+}
 
 
-    document.getElementById("modalName")
-    .innerHTML = card.pokemon;
+
+const modal =
+document.getElementById("modal");
 
 
-    document.getElementById("modalSet")
-    .innerHTML = card.set;
+
+modal.style.display="flex";
 
 
-    document.getElementById("modalNumber")
-    .innerHTML = "#" + card.number;
+
+document.getElementById("modalImage").src =
+card.image;
+
+
+document.getElementById("modalName").textContent =
+card.pokemon;
+
+
+document.getElementById("modalSet").textContent =
+card.set;
+
+
+document.getElementById("modalNumber").textContent =
+"#"+card.number;
+
+
 
 }
 
@@ -30,13 +53,26 @@ function openModal(id){
 
 function closeModal(){
 
-    document.getElementById("modal")
-    .style.display="none";
+
+document.getElementById("modal")
+.style.display="none";
+
 
 }
 
 
 
+window.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+
 document
 .getElementById("closeModal")
-.onclick = closeModal;
+.addEventListener(
+"click",
+closeModal
+);
+
+
+});
