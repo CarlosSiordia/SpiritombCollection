@@ -85,3 +85,33 @@ pointer-events:none;
 
 }
 
+.hideLoader{
+
+    animation:
+
+    loaderOut .8s forwards;
+
+}
+
+
+@keyframes loaderOut{
+
+    from{
+
+        opacity:1;
+
+        backdrop-filter:blur(15px);
+
+    }
+
+
+    to{
+
+        opacity:0;
+
+        backdrop-filter:blur(0);
+
+    }
+
+}
+
