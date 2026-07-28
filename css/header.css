@@ -1,0 +1,21 @@
+.hero{
+
+    width:min(700px,92%);
+
+    margin:22px auto;
+
+    padding:22px;
+
+    border-radius:28px;
+
+    background:rgba(20,20,28,.75);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    box-shadow:0 15px 45px rgba(0,0,0,.35);
+
+    text-align:center;
+
+}
