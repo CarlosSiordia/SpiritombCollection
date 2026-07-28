@@ -4,7 +4,7 @@ let collection = getCollection();
 
 function createCards(cards){
 
-
+collection = getCollection();
     const container =
     document.getElementById(
         "cardContainer"
