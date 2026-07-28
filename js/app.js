@@ -1,4 +1,7 @@
-window.onload=function(){
+window.onload = function(){
+
+
+console.log("Spiritomb App iniciada");
 
 
 createCards(cards);
@@ -6,17 +9,6 @@ createCards(cards);
 
 updateProgress();
 
-
-
-if("serviceWorker" in navigator){
-
-
-navigator.serviceWorker.register(
-"sw.js"
-);
-
-
-}
 
 
 };
