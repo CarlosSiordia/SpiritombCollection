@@ -55,10 +55,15 @@ updateProgress();
 
 setTimeout(()=>{
 
-loader.style.display="none";
+    loader.classList.add("hideLoader");
+
+    setTimeout(()=>{
+
+        loader.style.display="none";
+
+    },800);
 
 },500);
-
 
 
 return;
@@ -146,7 +151,13 @@ updateProgress();
 
 setTimeout(()=>{
 
-loader.style.display="none";
+    loader.classList.add("hideLoader");
+
+    setTimeout(()=>{
+
+        loader.style.display="none";
+
+    },800);
 
 },700);
 
