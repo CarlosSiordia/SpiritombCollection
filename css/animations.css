@@ -138,3 +138,20 @@ transform:translate(-60px,-40px);
     }
 
 }
+@keyframes progressShine{
+
+
+    0%{
+
+        left:-40%;
+
+    }
+
+
+    100%{
+
+        left:120%;
+
+    }
+
+}
