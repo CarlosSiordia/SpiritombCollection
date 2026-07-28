@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "set":"Legends Awakened",
+        "number":"16/146",
+        "year":2008,
+        "image":"assets/images/legends_awakened.png"
+    },
+
+    {
+        "id":2,
+        "set":"Supreme Victors",
+        "number":"84/147",
+        "year":2009,
+        "image":"assets/images/supreme_victors.png"
+    },
+
+    {
+        "id":3,
+        "set":"Arceus",
+        "number":"32/99",
+        "year":2009,
+        "image":"assets/images/arceus.png"
+    }
+
+]

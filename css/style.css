@@ -1,0 +1,231 @@
+:root{
+
+--background:#0f1017;
+
+--surface:#1a1c27;
+
+--surface2:#26293a;
+
+--primary:#8b5cf6;
+
+--secondary:#6d28d9;
+
+--text:#ffffff;
+
+--muted:#a9aec6;
+
+--radius:22px;
+
+}
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+background:var(--background);
+
+color:white;
+
+font-family:
+
+"Segoe UI",
+
+Arial,
+
+sans-serif;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+#background{
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at top,
+
+#5f2cc8 0%,
+
+transparent 35%),
+
+radial-gradient(circle at bottom,
+
+#47238e 0%,
+
+transparent 35%),
+
+#0d1017;
+
+z-index:-1;
+
+}
+
+#app{
+
+max-width:480px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+header{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-top:20px;
+
+margin-bottom:30px;
+
+}
+
+.logo{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 8px 30px rgba(0,0,0,.35);
+
+}
+.logo img{
+
+    width:80%;
+
+    height:80%;
+
+    object-fit:contain;
+
+}
+
+
+h1{
+
+font-size:28px;
+
+}
+
+header p{
+
+color:var(--muted);
+
+margin-top:5px;
+
+}
+
+.progressSection{
+
+margin-bottom:25px;
+
+background:rgba(255,255,255,.05);
+
+padding:20px;
+
+border-radius:var(--radius);
+
+backdrop-filter:blur(18px);
+
+}
+
+.progressInfo{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:12px;
+
+}
+
+.progressBar{
+
+height:12px;
+
+background:#303447;
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+#progressFill{
+
+width:0%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#7c3aed,
+
+#b794f4
+
+);
+
+transition:.5s;
+
+}
+
+.searchContainer{
+
+margin-bottom:30px;
+
+}
+
+#searchInput{
+
+width:100%;
+
+padding:15px;
+
+font-size:16px;
+
+background:#1f2230;
+
+border:none;
+
+outline:none;
+
+color:white;
+
+border-radius:16px;
+
+}
