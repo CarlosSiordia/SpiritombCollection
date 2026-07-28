@@ -1,0 +1,19 @@
+{
+    "name": "Spiritomb Collection",
+    "short_name": "Spiritomb",
+    "description": "Seguimiento de colección de cartas Pokémon Spiritomb",
+    "start_url": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+
+    "background_color": "#0f1017",
+    "theme_color": "#7c3aed",
+
+    "icons":[
+        {
+            "src":"assets/icono.png",
+            "sizes":"512x512",
+            "type":"image/png"
+        }
+    ]
+}
