@@ -1,50 +1,96 @@
-function updateProgress(){
+let collection = getCollection();
 
 
-const total=cards.length;
+
+function createCards(cards){
 
 
-const owned=collection.length;
-
-
-const percent=
-Math.round(
-(owned/total)*100
+const container =
+document.getElementById(
+"cardContainer"
 );
 
 
 
-document.getElementById(
-"ownedCount"
-).innerHTML=
-
-`${owned} / ${total}`;
+container.innerHTML="";
 
 
 
-document.getElementById(
-"percentage"
-).innerHTML=
-
-`${percent}%`;
+cards.forEach(card=>{
 
 
+let owned =
+collection.includes(card.id);
 
-document.getElementById(
-"progressFill"
-).style.width=
 
-percent+"%";
+
+container.innerHTML += `
+
+
+<div class="card ${owned ? "owned":""}">
+
+
+<div class="cardImage">
+
+
+<img src="${card.image}">
+
+
+</div>
+
+
+
+<div class="cardBody">
+
+
+<h2>
+${card.pokemon}
+</h2>
+
+
+<h3>
+${card.set}
+</h3>
+
+
+<p>
+#${card.number}
+</p>
+
+
+<p>
+⭐ ${card.rarity}
+</p>
+
+
+<button
+onclick="toggleCard(${card.id})">
+
+
+${owned ? "✅ La tengo":"➕ Añadir"}
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+
+});
 
 
 }
 
 
-let collection=getCollection();
-
 
 
 function toggleCard(id){
+
 
 
 if(collection.includes(id)){
@@ -52,11 +98,13 @@ if(collection.includes(id)){
 
 collection =
 collection.filter(
-card=>card!==id
+item=>item!==id
 );
 
 
-}else{
+}
+
+else{
 
 
 collection.push(id);
@@ -65,78 +113,66 @@ collection.push(id);
 }
 
 
+
 saveCollection(collection);
 
 
+
 createCards(cards);
+
 
 
 updateProgress();
 
 
 }
-function createCards(cards){
 
-    const container=document.getElementById("cardContainer");
 
-    container.innerHTML="";
 
-    cards.forEach(card=>{
 
-        const html = `
+function updateProgress(){
 
-<div class="card">
 
-    <div class="cardImage">
 
-        <img src="${card.image}" alt="${card.set}">
+let total =
+cards.length;
 
-    </div>
 
-    <div class="cardBody">
 
-        <div class="pokemonName">
+let owned =
+collection.length;
 
-            ${card.pokemon}
 
-        </div>
 
-        <div class="cardSet">
+let percent =
+Math.round(
+(owned/total)*100
+);
 
-            ${card.set}
 
-        </div>
 
-        <div class="cardNumber">
+document.getElementById(
+"ownedCount"
+).innerHTML =
 
-            #${card.number}
+`${owned} / ${total}`;
 
-        </div>
 
-        <div class="cardRare">
 
-            ⭐ ${card.rarity}
+document.getElementById(
+"percentage"
+).innerHTML =
 
-        </div>
+`${percent}%`;
 
-        <button 
-class="cardButton"
-onclick="toggleCard(${card.id})">
 
-${isOwned(card.id)
-?"✅ En colección"
-:"➕ Añadir"}
 
-</button>
+document.getElementById(
+"progressFill"
+).style.width =
 
-    </div>
+percent+"%";
 
-</div>
 
-`;
-
-        container.innerHTML += html;
-
-    });
 
 }
