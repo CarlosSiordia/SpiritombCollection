@@ -1,11 +1,18 @@
 #cardContainer{
 
-display:grid;
+    display:grid;
 
-gap:20px;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+    padding:18px;
+
+    max-width:700px;
+
+    margin:auto;
 
 }
-
 
 
 .card{
@@ -37,48 +44,58 @@ border-color:#8b5cf6;
 
 .cardImage{
 
-padding:20px;
+    aspect-ratio:63/88;
 
-background:#25283a;
+    overflow:hidden;
 
 }
-
-
 
 .cardImage img{
 
-width:100%;
+    width:100%;
 
-display:block;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.35s;
 
 }
-
 
 
 .cardBody{
 
-padding:20px;
+    padding:10px;
 
 }
-
-
 
 .cardBody h2{
 
-margin-bottom:8px;
+    font-size:.9rem;
+
+    font-family:"Outfit",sans-serif;
+
+    font-weight:700;
 
 }
-
-
 
 .cardBody h3{
 
-color:#aaa;
+    font-size:.72rem;
 
-margin-bottom:10px;
+    color:var(--subtext);
+
+    margin-top:2px;
 
 }
 
+.cardBody p{
+
+    display:none;
+
+}
 
 
 button{
