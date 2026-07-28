@@ -142,10 +142,16 @@ function toggleCard(id){
 function updateProgress(){
 
 
+    if(!window.cards){
+
+        return;
+
+    }
+
+
+
     const total =
-    window.cards ?
-    window.cards.length :
-    0;
+    window.cards.length;
 
 
 
@@ -155,13 +161,38 @@ function updateProgress(){
 
 
     const percentage =
-    total > 0 ?
+    total > 0
+    ?
     Math.round(
         (owned / total) * 100
     )
     :
     0;
 
+
+
+    document.getElementById(
+        "ownedCount"
+    ).innerHTML =
+    `${owned} / ${total}`;
+
+
+
+    document.getElementById(
+        "percentage"
+    ).innerHTML =
+    `${percentage}%`;
+
+
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+    percentage + "%";
+
+
+
+}
 
 
 
