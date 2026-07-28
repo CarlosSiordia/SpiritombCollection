@@ -1,3 +1,4 @@
+alert("app funcionando");
 window.onload = function(){
 
 
