@@ -1,23 +1,3 @@
-:root{
-
---background:#0f1017;
-
---surface:#1a1c27;
-
---surface2:#26293a;
-
---primary:#8b5cf6;
-
---secondary:#6d28d9;
-
---text:#ffffff;
-
---muted:#a9aec6;
-
---radius:22px;
-
-}
-
 *{
 
 margin:0;
@@ -28,61 +8,30 @@ box-sizing:border-box;
 
 }
 
+
 body{
 
-background:var(--background);
+background:#0f1017;
 
 color:white;
 
-font-family:
-
-"Segoe UI",
-
-Arial,
-
-sans-serif;
-
-overflow-x:hidden;
-
-min-height:100vh;
+font-family:Arial, sans-serif;
 
 }
 
-#background{
 
-position:fixed;
-
-inset:0;
-
-background:
-
-radial-gradient(circle at top,
-
-#5f2cc8 0%,
-
-transparent 35%),
-
-radial-gradient(circle at bottom,
-
-#47238e 0%,
-
-transparent 35%),
-
-#0d1017;
-
-z-index:-1;
-
-}
 
 #app{
 
-max-width:480px;
+max-width:500px;
 
 margin:auto;
 
 padding:20px;
 
 }
+
+
 
 header{
 
@@ -92,73 +41,69 @@ align-items:center;
 
 gap:15px;
 
-margin-top:20px;
-
 margin-bottom:30px;
 
 }
 
+
+
 .logo{
 
-    width:72px;
+width:70px;
 
-    height:72px;
+height:70px;
 
-    border-radius:20px;
+border-radius:20px;
 
-    background:rgba(255,255,255,.05);
+overflow:hidden;
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-    box-shadow:
-
-        0 8px 30px rgba(0,0,0,.35);
+background:#24163d;
 
 }
+
+
+
 .logo img{
 
-    width:80%;
+width:100%;
 
-    height:80%;
+height:100%;
 
-    object-fit:contain;
+object-fit:cover;
 
 }
+
 
 
 h1{
 
-font-size:28px;
+font-size:26px;
 
 }
+
+
 
 header p{
 
-color:var(--muted);
-
-margin-top:5px;
+color:#aaa;
 
 }
+
+
 
 .progressSection{
 
-margin-bottom:25px;
-
-background:rgba(255,255,255,.05);
+background:#191c29;
 
 padding:20px;
 
-border-radius:var(--radius);
+border-radius:20px;
 
-backdrop-filter:blur(18px);
+margin-bottom:25px;
 
 }
+
+
 
 .progressInfo{
 
@@ -166,66 +111,34 @@ display:flex;
 
 justify-content:space-between;
 
-margin-bottom:12px;
+margin-bottom:10px;
 
 }
+
+
 
 .progressBar{
 
 height:12px;
 
-background:#303447;
+background:#333;
 
-border-radius:50px;
+border-radius:20px;
 
 overflow:hidden;
 
 }
 
-#progressFill{
 
-width:0%;
+
+#progressFill{
 
 height:100%;
 
-background:
+width:0%;
 
-linear-gradient(
+background:#8b5cf6;
 
-90deg,
-
-#7c3aed,
-
-#b794f4
-
-);
-
-transition:.5s;
-
-}
-
-.searchContainer{
-
-margin-bottom:30px;
-
-}
-
-#searchInput{
-
-width:100%;
-
-padding:15px;
-
-font-size:16px;
-
-background:#1f2230;
-
-border:none;
-
-outline:none;
-
-color:white;
-
-border-radius:16px;
+transition:.3s;
 
 }
