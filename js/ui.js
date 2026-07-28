@@ -19,7 +19,7 @@ container.innerHTML="";
 cards.forEach(card=>{
 
 
-let owned =
+const owned =
 collection.includes(card.id);
 
 
@@ -32,9 +32,7 @@ container.innerHTML += `
 
 <div class="cardImage">
 
-
 <img src="${card.image}">
-
 
 </div>
 
@@ -54,7 +52,7 @@ ${card.set}
 
 
 <p>
-#${card.number}
+Número: ${card.number}
 </p>
 
 
@@ -63,8 +61,8 @@ ${card.set}
 </p>
 
 
-<button
-onclick="toggleCard(${card.id})">
+
+<button onclick="toggleCard(${card.id})">
 
 
 ${owned ? "✅ La tengo":"➕ Añadir"}
@@ -78,7 +76,9 @@ ${owned ? "✅ La tengo":"➕ Añadir"}
 </div>
 
 
+
 `;
+
 
 
 });
@@ -98,7 +98,7 @@ if(collection.includes(id)){
 
 collection =
 collection.filter(
-item=>item!==id
+card=>card !== id
 );
 
 
@@ -133,20 +133,18 @@ updateProgress();
 function updateProgress(){
 
 
-
-let total =
+const total =
 cards.length;
 
 
-
-let owned =
+const owned =
 collection.length;
 
 
 
-let percent =
+const percentage =
 Math.round(
-(owned/total)*100
+(owned / total) * 100
 );
 
 
@@ -163,7 +161,7 @@ document.getElementById(
 "percentage"
 ).innerHTML =
 
-`${percent}%`;
+`${percentage}%`;
 
 
 
@@ -171,8 +169,7 @@ document.getElementById(
 "progressFill"
 ).style.width =
 
-percent+"%";
-
+percentage + "%";
 
 
 }
