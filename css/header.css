@@ -19,3 +19,32 @@
     text-align:center;
 
 }
+.hero h1{
+
+    font-family:"Outfit",sans-serif;
+
+    letter-spacing:3px;
+
+    font-size:2rem;
+
+    margin-top:10px;
+
+}
+
+.heroLogo{
+
+    width:74px;
+
+    animation:floatLogo 4s ease-in-out infinite;
+
+}
+
+.hero span{
+
+    color:var(--subtext);
+
+    display:block;
+
+    margin-top:4px;
+
+}
