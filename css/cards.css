@@ -1,179 +1,97 @@
-/* ===========================
-   CARD GRID
-=========================== */
-
 #cardContainer{
 
-    display:grid;
+display:grid;
 
-    gap:22px;
-
-    padding-bottom:40px;
+gap:20px;
 
 }
 
-/* ===========================
-   CARD
-=========================== */
+
 
 .card{
 
-    position:relative;
+background:#191c29;
 
-    background:rgba(255,255,255,.06);
+border-radius:25px;
 
-    backdrop-filter:blur(15px);
+overflow:hidden;
 
-    border-radius:24px;
-
-    overflow:hidden;
-
-    transition:.35s;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-
-        0 10px 25px rgba(0,0,0,.25);
+border:2px solid transparent;
 
 }
 
-.card:hover{
 
-    transform:translateY(-6px);
-
-    box-shadow:
-
-        0 20px 35px rgba(0,0,0,.35);
-
-}
-
-/* ===========================
-   IMAGE
-=========================== */
-
-.cardImage{
-
-    width:100%;
-
-    aspect-ratio:63/88;
-
-    background:#26293a;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.cardImage img{
-
-    width:88%;
-
-    transition:.35s;
-
-}
-
-.card:hover img{
-
-    transform:scale(1.05);
-
-}
-
-/* ===========================
-   INFO
-=========================== */
-
-.cardBody{
-
-    padding:18px;
-
-}
-
-.cardSet{
-
-    font-size:22px;
-
-    font-weight:bold;
-
-    margin-bottom:8px;
-
-}
-
-.cardNumber{
-
-    color:#b8bfd8;
-
-    margin-bottom:5px;
-
-}
-
-.cardYear{
-
-    color:#8b91a8;
-
-    font-size:14px;
-
-}
-
-/* ===========================
-   BUTTON
-=========================== */
-
-.cardButton{
-
-    margin-top:18px;
-
-    width:100%;
-
-    padding:14px;
-
-    border:none;
-
-    border-radius:14px;
-
-    cursor:pointer;
-
-    background:#7c3aed;
-
-    color:white;
-
-    font-size:15px;
-
-    transition:.3s;
-
-}
-
-.cardButton:hover{
-
-    background:#9654ff;
-
-}
 
 .card.owned{
 
-    border:2px solid #7c3aed;
+border-color:#8b5cf6;
 
 }
 
-.pokemonName{
 
-    font-size:26px;
 
-    font-weight:bold;
+.cardImage{
 
-    margin-bottom:8px;
+padding:20px;
+
+background:#25283a;
 
 }
 
-.cardRare{
 
-    margin-top:10px;
 
-    color:#ffd95c;
+.cardImage img{
 
-    font-size:15px;
+width:100%;
+
+display:block;
+
+}
+
+
+
+.cardBody{
+
+padding:20px;
+
+}
+
+
+
+.cardBody h2{
+
+margin-bottom:8px;
+
+}
+
+
+
+.cardBody h3{
+
+color:#aaa;
+
+margin-bottom:10px;
+
+}
+
+
+
+button{
+
+width:100%;
+
+padding:15px;
+
+margin-top:15px;
+
+border:0;
+
+border-radius:15px;
+
+background:#7c3aed;
+
+color:white;
+
+font-size:16px;
 
 }
