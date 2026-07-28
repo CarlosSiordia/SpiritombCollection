@@ -1,4 +1,4 @@
-window.onload=()=>{
+window.onload=function(){
 
 
 createCards(cards);
@@ -7,19 +7,16 @@ createCards(cards);
 updateProgress();
 
 
-};
 
 if("serviceWorker" in navigator){
 
-navigator.serviceWorker
-.register("sw.js")
 
-.then(()=>{
-
-console.log(
-"Spiritomb App instalada correctamente"
+navigator.serviceWorker.register(
+"sw.js"
 );
 
-});
 
 }
+
+
+};
