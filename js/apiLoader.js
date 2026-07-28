@@ -1,58 +1,43 @@
-alert("apiLoader funcionando");
 async function loadApiCards(){
 
 
-    const results =
-    await searchSpiritomb();
+    const apiCards = await getSpiritombCards();
 
 
 
-    if(results.length===0){
-
-
-        alert(
-        "No se encontraron cartas"
-        );
-
-
-        return;
-
-    }
+    console.log(apiCards);
 
 
 
-    const cardsAPI =
-    results.map(
-    (card,index)=>{
+    const cardsFromAPI = apiCards.map(
+        (card,index)=>{
 
 
-        return {
+            return {
 
-            id:index+1,
+                id:index+1,
 
-            pokemon:card.name,
+                pokemon:card.name,
 
-            set:card.set.name,
+                set:card.set.name,
 
-            number:card.number,
+                number:card.number,
 
-            rarity:
-            card.rarity || "Normal",
+                year:card.set.releaseDate,
 
-            year:
-            card.set.releaseDate,
+                rarity:card.rarity || "Unknown",
 
-            image:
-            card.images.large
+                image:card.images.large
 
-        };
+            };
 
 
-    });
+        }
+    );
 
 
 
-    createCards(cardsAPI);
+    createCards(cardsFromAPI);
 
 
 }
