@@ -1,7 +1,7 @@
 function openModal(id){
 
 
-    const card = cards.find(
+    const card = window.cards.find(
         card => card.id === id
     );
 
