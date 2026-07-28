@@ -150,6 +150,10 @@ function updateProgress(){
     }
 
 
+    // Recargar colección guardada
+    collection = getCollection();
+
+
 
     const total =
     window.cards.length;
@@ -172,43 +176,16 @@ function updateProgress(){
 
 
 
-    document.getElementById(
-        "ownedCount"
-    ).innerHTML =
-    `${owned} / ${total}`;
-
-
-
-    document.getElementById(
-        "percentage"
-    ).innerHTML =
-    `${percentage}%`;
-
-
-
-    document.getElementById(
-        "progressFill"
-    ).style.width =
-    percentage + "%";
-
-
-
-}
-
-
-
     const ownedCount =
     document.getElementById(
         "ownedCount"
     );
 
 
-
     const percentageText =
     document.getElementById(
         "percentage"
     );
-
 
 
     const progress =
