@@ -1,6 +1,11 @@
-window.onload = () => {
+window.onload=()=>{
 
-    createCards(cards);
+
+createCards(cards);
+
+
+updateProgress();
+
 
 };
 
