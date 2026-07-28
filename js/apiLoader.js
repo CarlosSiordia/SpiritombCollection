@@ -1,7 +1,3 @@
-let loadedCards = [];
-
-
-
 async function loadApiCards(){
 
 
@@ -10,65 +6,52 @@ async function loadApiCards(){
 
 
 
-    console.log(
-        "Resultados Spiritomb:",
-        results
-    );
+    if(results.length===0){
+
+
+        alert(
+        "No se encontraron cartas"
+        );
+
+
+        return;
+
+    }
 
 
 
-    loadedCards =
+    const cardsAPI =
     results.map(
-        (card,index)=>{
+    (card,index)=>{
 
 
-            return {
+        return {
+
+            id:index+1,
+
+            pokemon:card.name,
+
+            set:card.set.name,
+
+            number:card.number,
+
+            rarity:
+            card.rarity || "Normal",
+
+            year:
+            card.set.releaseDate,
+
+            image:
+            card.images.large
+
+        };
 
 
-                id:index+1,
-
-
-                pokemon:
-                card.name,
-
-
-                set:
-                card.set.name,
-
-
-                number:
-                card.number,
-
-
-                rarity:
-                card.rarity || "Normal",
-
-
-                year:
-                card.set.releaseDate,
-
-
-                image:
-                card.images.large
-
-
-            };
-
-
-        });
+    });
 
 
 
-    console.log(
-        "Cartas procesadas:",
-        loadedCards
-    );
-
-
-
-    createCards(
-        loadedCards
-    );
+    createCards(cardsAPI);
 
 
 }
