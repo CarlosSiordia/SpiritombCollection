@@ -1,83 +1,147 @@
 async function loadApiCards(){
 
 
-    let savedCards =
-    getApiCards();
+
+const loader =
+document.getElementById(
+"loader"
+);
 
 
 
-    if(savedCards){
-
-
-        console.log(
-        "Cargando cartas guardadas"
-        );
-
-
-        window.cards =
-        savedCards;
-
-
-        createCards(cards);
-
-
-        return;
-
-    }
+const progress =
+document.getElementById(
+"loadingProgress"
+);
 
 
 
-    console.log(
-    "Consultando API..."
-    );
+const text =
+document.getElementById(
+"loadingText"
+);
 
 
 
-    const apiCards =
-    await getSpiritombCards();
+
+let savedCards =
+getApiCards();
 
 
 
-    const cardsFromAPI =
-    apiCards.map(
-    (card,index)=>{
+if(savedCards && savedCards.length){
 
 
-        return {
+progress.style.width="100%";
 
-            id:index+1,
-
-            pokemon:card.name,
-
-            set:card.set.name,
-
-            number:card.number,
-
-            year:card.set.releaseDate,
-
-            rarity:
-            card.rarity || "Unknown",
-
-            image:
-            card.images.large
-
-        };
-
-
-    });
+text.innerHTML=
+"Colección cargada";
 
 
 
-    saveApiCards(
-    cardsFromAPI
-    );
+window.cards =
+savedCards;
 
 
-    window.cards =
-    cardsFromAPI;
+
+createCards(
+window.cards
+);
 
 
-    createCards(cards);
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},500);
+
+
+
+return;
+
+}
+
+
+
+
+progress.style.width="40%";
+
+text.innerHTML=
+"Buscando cartas Spiritomb...";
+
+
+
+const apiCards =
+await getSpiritombCards();
+
+
+
+progress.style.width="70%";
+
+
+
+const cardsFromAPI =
+apiCards.map(
+(card,index)=>{
+
+
+return {
+
+
+id:index+1,
+
+pokemon:card.name,
+
+set:card.set.name,
+
+number:card.number,
+
+year:card.set.releaseDate,
+
+rarity:
+card.rarity || "Normal",
+
+image:
+card.images.large
+
+
+};
+
+
+});
+
+
+
+saveApiCards(
+cardsFromAPI
+);
+
+
+
+window.cards =
+cardsFromAPI;
+
+
+
+progress.style.width="100%";
+
+text.innerHTML=
+"Listo";
+
+
+
+createCards(
+window.cards
+);
+
+
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},700);
 
 
 
