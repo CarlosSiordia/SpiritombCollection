@@ -27,7 +27,7 @@ collection.includes(card.id);
 container.innerHTML += `
 
 
-<div class="card ${owned ? "owned":""}" onclick="openModal(${card.id})">>
+<div class="card ${owned ? "owned":""}" onclick="openModal(${card.id});">
 
 
 <div class="cardImage">
