@@ -4,7 +4,36 @@ const API_URL = "https://api.pokemontcg.io/v2/cards";
 async function searchSpiritomb(){
 
 
+    const debug = document.createElement("div");
+
+    debug.id="debug";
+
+    debug.style.position="fixed";
+
+    debug.style.bottom="10px";
+
+    debug.style.left="10px";
+
+    debug.style.right="10px";
+
+    debug.style.padding="15px";
+
+    debug.style.background="#222";
+
+    debug.style.color="white";
+
+    debug.style.zIndex="9999";
+
+    document.body.appendChild(debug);
+
+
+
     try{
+
+
+        debug.innerHTML =
+        "Conectando con API...";
+
 
 
         const response = await fetch(
@@ -12,37 +41,37 @@ async function searchSpiritomb(){
         );
 
 
-        console.log(
-            "Respuesta API:",
-            response
-        );
-
-
-        const data = await response.json();
+        debug.innerHTML +=
+        "<br>Respuesta: "+response.status;
 
 
 
-        console.log(
-            "Cartas recibidas:",
-            data
-        );
+        const data =
+        await response.json();
 
 
-        return data.data || [];
+
+        debug.innerHTML +=
+        "<br>Cartas encontradas: "
+        + data.data.length;
+
+
+
+        return data.data;
 
 
 
     }catch(error){
 
 
-        console.error(
-            "Error conectando API:",
-            error
-        );
+        debug.innerHTML =
+        "ERROR: "
+        + error.message;
 
 
         return [];
 
     }
+
 
 }
