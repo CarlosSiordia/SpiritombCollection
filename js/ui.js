@@ -1,3 +1,45 @@
+function updateProgress(){
+
+
+const total=cards.length;
+
+
+const owned=collection.length;
+
+
+const percent=
+Math.round(
+(owned/total)*100
+);
+
+
+
+document.getElementById(
+"ownedCount"
+).innerHTML=
+
+`${owned} / ${total}`;
+
+
+
+document.getElementById(
+"percentage"
+).innerHTML=
+
+`${percent}%`;
+
+
+
+document.getElementById(
+"progressFill"
+).style.width=
+
+percent+"%";
+
+
+}
+
+
 let collection=getCollection();
 
 
