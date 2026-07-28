@@ -81,3 +81,60 @@ transform:translate(-60px,-40px);
     }
 
 }
+
+/* Respiración de la carta */
+
+@keyframes cardAura{
+
+    0%{
+
+        transform:translateY(0);
+
+        box-shadow:
+        0 0 10px rgba(168,85,247,.25);
+
+    }
+
+
+    50%{
+
+        transform:translateY(-3px);
+
+        box-shadow:
+        0 0 25px rgba(168,85,247,.55);
+
+    }
+
+
+    100%{
+
+        transform:translateY(0);
+
+        box-shadow:
+        0 0 10px rgba(168,85,247,.25);
+
+    }
+
+}
+
+
+/* Movimiento del brillo */
+
+@keyframes auraMove{
+
+    0%{
+
+        background-position:
+        0% 50%;
+
+    }
+
+
+    100%{
+
+        background-position:
+        200% 50%;
+
+    }
+
+}
